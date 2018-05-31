@@ -1,0 +1,305 @@
+		\begin{question}{27,1213}{Intégration graphique}{3}{1188}
+           La droite ci-après représente l'évolution de la concentration d'azote dissoute dans une solution \emph{à chaque instant}. Quelle est la quantité totale d'azote cumulée entre le début de l'expérience ($t=\SI{0}{\second}$) et la fin au bout d'\emph{une minute}?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $t\;(\si{\second})$,
+                        %minor x tick num = 4,
+                        ylabel = {$[\ce{N}]\;(\si{\mol\per\liter\per\second})$},
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser délimitation décimale français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:70,
+                        samples=2,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {3};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] \SI{-54}{\mol\per\liter}
+		    \item[true] \SI{180}{\mol\per\liter}
+		    \item[false] \SI{3}{\mol\per\liter}
+		    \item[false] \SI{30}{\mol\per\liter}
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+            La droite ci-après représente l'évolution de la concentration \emph{instantanée} d'azote dissoute dans une solution à chaque instant. Quelle est la quantité totale d'azote cumulée entre le début de l'expérience ($t=\SI{0}{\second}$) et la fin au bout de \emph{trente secondes}?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $t\;(\si{\second})$,
+                        %minor x tick num = 4,
+                        ylabel = {$[\ce{N}]\;(\si{\mol\per\liter\per\second})$},
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser délimitation décimale français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:40,
+                        samples=2,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {x};
+                      \addplot [
+                        color=red,
+                        %mark=*,
+                      ]
+                      coordinates {(20,20)}
+                      node[pin=0:{$y=x$}]{};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] \SI{-14}{\mol\per\liter}
+		    \item[true] \SI{450}{\mol\per\liter}
+		    \item[false] \SI{900}{\mol\per\liter}
+		    \item[false] \SI{30}{\mol\per\liter}
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             Ci-après, on représente l'évolution de la concentration d'oxygène dissoute dans une solution \emph{à chaque instant}. Au bout de trente secondes d'expérience, on éclaire la solution et le phytoplancton présent dans la solution produit de l'oxygène par photosynthèse. Quelle est la quantité totale d'oxygène \emph{cumulée} entre le début de l'expérience ($t=\SI{0}{\second}$) et la fin au bout d'\emph{une minute trente secondes}?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        ymin=10,   ymax=90,
+                        xlabel = $t\;(\si{\second})$,
+                        %minor x tick num = 4,
+                        ylabel = {$[\ce{O}]\;(\si{\mol\per\liter\per\second})$},
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser délimitation décimale français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      coordinates {(0,20) (30,20)};
+                      \addplot [
+                        domain=30:90,
+                        samples=2,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {(x-30)+20};
+                      \addplot [
+                       color=red,
+                        %mark=*,
+                      ]
+                      coordinates {(40,30)}
+                      node[pin=0:{$y=(x-30)+20$}]{};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] \SI{-10}{\mol\per\liter}
+		    \item[true] \SI{3090}{\mol\per\liter}
+		    \item[false] \SI{900}{\mol\per\liter}
+		    \item[false] \SI{120}{\mol\per\liter}
+		\end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+		\begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             Ci-après, on représente l'évolution de la concentration de dioxyde de carbone dissoute dans une solution. Il existe naturellement du \ce{CO2} dissout dans l'eau à une concentration de \SI{20}{\mol\per\liter}. Au bout de trente secondes d'expérience, on éclaire la solution et le phytoplancton présent dans la solution produit de l'oxygène par photosynthèse en transformant le dioxyde de carbone. Quelle est la quantité approximative de \ce{CO2} \emph{cumulée} entre le début de l'expérience ($t=\SI{0}{\second}$) et la fin au bout d'\emph{une minute}?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        ymin=0,   ymax=30,
+                        xmin=0,   xmax=60,
+                        xlabel = $t\;(\si{\second})$,
+                        %minor x tick num = 4,
+                        ylabel = {$[\ce{CO2}]\;(\si{\mol\per\liter})$},
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser délimitation décimale français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      coordinates {(0,20) (30,20)};
+                      \addplot [
+                        domain=30:60,
+                        samples=20,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {20*exp(-x+30)};
+                      \addplot [
+                       color=red,
+                        %mark=*,
+                      ]
+                      coordinates {(31,7.357588823428847)}
+                      node[pin=0:{$y=20e^{30-x}$}]{};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] \SI{10}{\mol\per\liter.\second}
+		    \item[true] \SI{620}{\mol\per\liter.\second}
+		    \item[false] \SI{102}{\mol\per\liter.\second}
+		    \item[false] \SI{60}{\mol\per\liter.\second}
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+		\begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             Ci-après, on représente l'évolution de la concentration de dioxyde de carbone dissoute dans une solution. Il existe naturellement du \ce{CO2} dissout dans l'eau à une concentration de \SI{20}{\mol\per\liter}. Au bout de trente secondes d'expérience, on éclaire la solution et le phytoplancton présent dans la solution produit de l'oxygène par photosynthèse en transformant le dioxyde de carbone. Quelle est la quantité approximative de \ce{CO2} \emph{cumulée} entre le début de l'expérience ($t=\SI{0}{\second}$) et la fin au bout d'\emph{une minute}?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        ymin=0,   ymax=30,
+                        xmin=0,   xmax=60,
+                        xlabel = $t\;(\si{\second})$,
+                        %minor x tick num = 4,
+                        ylabel = {$[\ce{CO2}]\;(\si{\mol\per\liter})$},
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser délimitation décimale français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      coordinates {(0,20) (30,20)};
+                      \addplot [
+                        domain=30:60,
+                        samples=2,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {20+(-x+30)};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] \SI{500}{\mol\per\liter.\second}
+		    \item[true] \SI{750}{\mol\per\liter.\second}
+		    \item[false] \SI{12}{\mol\per\liter.\second}
+		    \item[false] \SI{60}{\mol\per\liter.\second}
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             Ci-après, on représente l'évolution de la concentration de dioxygène dissoute dans une solution. Il existe naturellement de l'\ce{O2} dissout dans l'eau à une concentration de \SI{10}{\mol\per\liter}. Au bout de dix secondes d'expérience, on arrête d'éclairer la solution et le phytoplancton présent dans la solution stoppe alors la photosynthèse de l'oxygène. Après cinq secondes, on la rallume à plus haute intensité. Quelle est la quantité approximative d'\ce{O2} \emph{cumulée} entre le début de l'expérience ($t=\SI{0}{\second}$) et la fin au bout de \emph{trente secondes}?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        ymin=15,   ymax=30,
+                        xmin=0,   xmax=30,
+                        xlabel = $t\;(\si{\second})$,
+                        minor y tick num = 4,
+                        %minor x tick num = 4,
+                        ylabel = {$[\ce{O}]\;(\si{\mol\per\liter})$},
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser délimitation décimale français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                        domain=0:10,
+                        samples=2,
+                      ]
+                      {20+0.1*x};
+                      \addplot [
+                        domain=10:15,
+                        samples=2,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {21-0.1*(x-10)};
+                      \addplot [
+                        domain=15:30,
+                        samples=2,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {20.5+0.3*(x-15)};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+		    \item[true] \SI{642}{\mol\per\liter.\second}
+		    \item[false] \SI{10}{\mol\per\liter.\second}
+		    \item[false] \SI{800}{\mol\per\liter.\second}
+		    \item[false] \SI{63}{\mol\per\liter.\second}
+	    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+		\begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             Ci-après, on représente l'évolution de la concentration d'oxygène dissoute dans une solution. Il existe naturellement de l'oxygène dissout dans l'eau en quantité infime de \SI{20}{\mol\per\liter}. Au bout de trente seconde d'expérience, on éclaire la solution et le phytoplancton présent dans la solution produit de l'oxygène par photosynthèse. Quelle est la quantité totale d'oxygène \emph{cumulée} entre le début de l'expérience ($t=\SI{0}{\second}$) et la fin au bout d'\emph{une minute}?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        ymin=10,   ymax=500,
+                        xmin=0,   xmax=60,
+                        xlabel = $t\;(\si{\second})$,
+                        %minor x tick num = 4,
+                        ylabel = {$[\ce{O}]\;(\si{\mol\per\liter})$},
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser délimitation décimale français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      coordinates {(0,20) (30,20)};
+                      \addplot [
+                        domain=30:60,
+                        samples=10,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {(x-30)^2+20};
+                      \addplot [
+                       color=red,
+                        %mark=*,
+                      ]
+                      coordinates {(35,45)}
+                      node[pin=0:{$y=(x-30)^2+20$}]{};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[true] \SI{10.2}{\kilo\mol\per\liter}
+		    \item[true] \SI{10.2e3}{\mol\per\liter}
+		    \item[false] \SI{102}{\mol\per\liter}
+		    \item[false] \SI{1002}{\mol\per\liter}
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%

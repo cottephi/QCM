@@ -1,0 +1,75 @@
+import os
+
+authors = ["Philippe","Christopher","Antoine"]
+
+for author in authors:
+  ifile = open("./"+author+"/main_"+author+".tex")
+  lines = ifile.readlines()
+  if os.path.isdir("./"+author+"/section"):
+    os.system("rm -r ./"+author+"/section")
+  os.system("mkdir ./"+author+"/section")
+  curr_section = ""
+  curr_subsection = ""
+
+  for line in lines:
+    line = line.split("\n")[0]
+    full_line = line[:]
+    if "%" in line:
+      continue
+    
+    if "\\section" in line:
+      line = line[:-1].replace("\t","")
+      old_line = line
+      for ch in old_line:
+        if ch == " ":
+          line = line[1:]
+        else:
+          break
+      section = line.replace("\\section{","").lower()
+      section = section.replace("é","e")
+      section = section.replace("è","e")
+      section = section.replace("à","a")
+      section = section.replace("ç","c")
+      section = section.replace(" ","_")
+      section = section.replace("$","")
+      section = section.replace("(","")
+      section = section.replace(")","")
+      section = section.replace("î","i")
+      section = section.replace("â","a")
+      section = section.replace("ê","e")
+      section = section.replace("\'","")
+      section = section.replace("/","")
+      if not os.path.isdir("./"+author+"/section/"+section):
+        os.system("mkdir ./"+author+"/section/" + section)
+      curr_section = section
+      
+    elif "\\subsection" in line:
+      line = line[:-1].replace("\t","")
+      old_line = line
+      for ch in old_line:
+        if ch == " ":
+          line = line[1:]
+        else:
+          break
+      subsection = line.replace("\\subsection{","").lower()
+      subsection = subsection.replace("é","e")
+      subsection = subsection.replace("è","e")
+      subsection = subsection.replace("à","a")
+      subsection = subsection.replace("ç","c")
+      subsection = subsection.replace(" ","_")
+      subsection = subsection.replace("$","")
+      subsection = subsection.replace("(","")
+      subsection = subsection.replace(")","")
+      subsection = subsection.replace("î","i")
+      subsection = subsection.replace("â","a")
+      subsection = subsection.replace("ê","e")
+      subsection = subsection.replace("\'","")
+      subsection = subsection.replace("/","")
+      if not os.path.isfile("./"+author+"/subsection/" + curr_section + "/" + subsection):
+        os.system("touch ./"+author+"/section/" + curr_section + "/" + subsection + ".tex")
+      curr_subsection = subsection
+      
+    elif curr_section != "" and curr_subsection != "":
+      ofile = open("./"+author+"/section/" + curr_section + "/" + curr_subsection + ".tex","a")
+      ofile.write(full_line+"\n")
+      ofile.close()

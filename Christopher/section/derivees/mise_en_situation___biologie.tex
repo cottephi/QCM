@@ -1,0 +1,108 @@
+            \begin{question}{NC}{type de fonction}{2}{/} 
+				Pour une enzyme michaélienne, la vitesse de synthèse d’un produit est définie selon  la relation: $v(S,K_m) = \frac{(V_{max} . S)}{(K_m+S)}$, avec $S$ la concentration en substrat, $K_m$ un paramètre de la cellule et $V_{max}$ la vitesse de synthèse maximale. On veut connaître l'influence de $K_m$ sur l'évolution de $v$. On étudie alors la dérivée partielle de $v$ par rapport à $K_m$ notée $\frac{\partial v}{\partial K_m}$. Donner son expression. 
+            \end{question}
+            \begin{reponses}
+            	\item[false]  $\frac{\partial v}{\partial K_m} = \frac{V_{max}.S^2}{(K_m+S)^2}$
+            	\item[false]   $\frac{\partial v}{\partial K_m} = \frac{-1}{(K_m+S)^2}$
+                \item[true]  $\frac{\partial v}{\partial K_m} = \frac{-V_{max}.S^2}{(K_m+S)^2}$
+                \item[false]  $\frac{\partial v}{\partial K_m} = \frac{-V_{max}}{(K_m+S)}$
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+				\begin{question}{NC}{dérivée}{2}{/} 
+				La relation suivante montre l'évolution du nombre de cellules en fonction du temps : $N_{cellulles}(t)=\frac{10}{1-5.exp(-0.5t)}$. Exprimer la dérivée par rapport au temps de cette fonction.
+            \end{question}
+            \begin{reponses}
+            	\item[true]   $\frac{-25.\exp(-0.5t)}{(1-5.\exp(-0.5t))^{2}}$ 
+            	\item[false]  $\frac{10(1-5.\exp(-0.5t))-25.\exp(-0.5t)}{(1-5.\exp(-0.5t))^{2}}$
+                \item[false]  ${10(1-5.\exp(-0.5t))-25.\exp(-ct)}$ 
+                \item[false]   ${10(1-5.\exp(-0.5t))+25.\exp(-ct)}$
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{question}{22}{Dérivées}{2}{/}
+			  Lorsqu'un bactéricide a été introduit dans un milieu nutritif où une population de bactéries croissait, la population a continué à croître pendant un certains temps mais peu après elle s'est arrêtée de croître et a commencé à décliner. La taille de la population à l'instant t est $f(t) = 10^6 + 10^4 t - 10^3 t^2$. $f(t)$ représente le nombre de bactéries et t représente le temps en heures. Calculer le taux de croissance $\frac{\Delta individus}{\Delta t}$ au bout de 10h, c'est-à-dire la dérivée par rapport au temps $f'(t)$ à t=10h.
+            \end{question}
+            \begin{reponses}
+            	\item[false] $10000$ individus/heure
+            	\item[true]  $-10000$ individus/heure
+                \item[false]   $0$ individus/heure
+                \item[false] $5000$ individus par heure
+                \item[false] $-5000$ individus par heure
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{question}{22}{Dérivées}{2}{/}
+			  Lorsqu'un bactéricide a été introduit dans un milieu nutritif où une population de bactéries croissait, la population a continué à croître pendant un certains temps mais peu après elle s'est arrêtée de croître et a commencé à décliner. La taille de la population à l'instant t est $f(t) = 10^6 + 10^4 t - 10^3 t^2$. $f(t)$ représente le nombre de bactéries et t représente le temps en heures. A quelle heure le taux de croissance des bactéries sera-t-il nul, c'est-à-dire a quel temps t $f'(t)=0$ ?
+            \end{question}
+            \begin{reponses}
+            	\item[false] 0
+            	\item[false] 10
+                \item[false]  $+\infty$ 
+                \item[true]  5
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{question}{22}{Dérivées}{2}{/}
+			 A l'instant t=0, on introduit $N_0$ bactéries dans un milieu de culture. On s'intéresse alors à l'évolution de la population de bactéries, dont le nombre à l'instant t (t > ou égal à 0) est défini par la fonction suivante $f(t) = N_0 \exp{10t}$. La dérivée par rapport au temps de $f$ correspond au taux d'accroissement du nombre de bactéries par unité de temps. Exprimer ce taux d'accroissement ?
+            \end{question}
+            \begin{reponses}
+            	\item[true]   $10 N_0 \exp{10t} $
+            	\item[false]  $N_0 e $
+                \item[false]  $10 N_0 t \exp{10t-1} $
+                \item[false]  $0 $
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \begin{question}{20}{Dérivées}{2}{19}
+            La courbe ci-dessous représente l'évolution d'une population de bactérie en fonction du temps. Que peut-on dire de la dérivée de cette fonction à $t=\SI{1}{\hour}$?
+            \begin{figure}[!h]
+	          \begin{center}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        title = { },
+                        axis lines = left,
+                        xlabel = $t (h)$,
+                        %minor x tick num = 4,
+                        ylabel = $N(t)$,
+                        %ymin=0, ymax=40,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={\,}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:10,
+                        samples=100,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {4000*x/(x^2+1)};
+                  \end{axis}
+              \end{tikzpicture}
+              \end{center}
+              \end{figure}
+        \end{question}
+        \begin{reponses}
+            	\item[false]  Elle est positive.
+            	\item[true]  Elle est nulle.
+                \item[false]  Elles est négative.
+                \item[false]   Elle n'est pas définie.
+            \end{reponses}
+           %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			 \begin{question}{/}{Dérivées}{2}{22 et 23}
+				La relation suivante montre l'évolution du nombre de cellules en fonction du temps: $N_{cellules}(t)=t^{2}\cdot\exp(5t)$. Quelle est la dérivée par rapport au temps de cette fonction?
+            \end{question}
+            \begin{reponses}
+            	\item[true]   $2t\exp(5t)+10t^{2}\exp(5t)$ 
+            	\item[false]  $2t\exp(5t)-10t\exp(5t) $ 
+                \item[false]  $2t^{2}+5t\exp(5t) $ 
+                \item[false]  $2t\exp(5t)+10t^{2}\exp(5t) $ 
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{question}{/}{Dérivées}{1}{22 et 23 et 24}
+				Une population de bactéries croit en fonction du temps avec la relation suivante : $P(t) = \frac{4t}{t^{2}+1}$. Calculer la dérivée ce cette fonction en fonction du temps, c'est-à-dire calculer la vitesse de croissance de cette population de bactéries.
+            \end{question}
+            \begin{reponses}
+            	\item[false] $\frac{4(1+3t^{2})}{(t^{2}+1)^{2}}$
+            	\item[false]  $ 4(1-t^{2})$
+                \item[true]  $\frac{4(1-t^{2})}{(t^{2}+1)^{2}}$
+                \item[false] $ \frac{4(1-t^{2})}{(2t+1)}$
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

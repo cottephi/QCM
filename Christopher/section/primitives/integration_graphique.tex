@@ -1,0 +1,220 @@
+        \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+           En physique, de nombreux phénomène sont périodiques en fonction du temps. Leur évolution peut être décrite par une fonction sinusoidale $f(x) = cos(x)$. Que vaut l'intégrale de cette fonction entre $-\pi/2$ et $\pi/2$ .
+            \begin{figure}
+              \begin{tikzpicture}
+                     \pgfmathdeclarefunction{C}{2}{\pgfmathparse{cos(deg(#1*#2))}}
+                  \begin{axis}[
+                   xtick={-6.28318, -4.7123889, -3.14159, -1.5708,0, 1.5708, 3.14159, 4.7123889, 6.28318},
+                    xticklabels={ $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,0 ,$\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$ },
+                        axis lines = left,
+                        xlabel = $x$,
+                         %xmin=0,   xmax=6,
+                          domain=-0.5*pi:1.5*pi,
+                        minor x tick num = 4,
+                        ylabel = $f(x)$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=-0.5*pi:1.5*pi,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {C(1,x)};% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                      \addplot [black,thick] {0};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] $\pi$
+		    \item[true]  $-\pi$
+		    \item[false] $0$
+		    \item[false]  $2\pi$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+         \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             On représente une fonction qui ne peut prendre seulement que deux valeurs, 1 et -1 , de manière périodique. Calculer, graphiquement, l'intégrale de cette fonction entre 0 et 8. 
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                         xmin=0,   xmax=10,
+                         ymin=-1.5,   ymax=1.5,
+                        minor x tick num = 4,
+                        ylabel = $f(x)$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:2,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {1};% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                      \addplot [
+                        domain=2:4,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {-1};
+                       \addplot [black,thick,domain=0:10] {0};
+                        \addplot [
+                        domain=4:6,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {1};
+                      \addplot [
+                        domain=6:8,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {-1};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+             \item[false] $1$
+		    \item[false] $2$
+		    \item[false] $-1$
+		    \item[true]  $0$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             On représente une fonction qui ne peut prendre seulement que deux valeurs, 1 et -1 , de manière périodique. Calculer, graphiquement, l'intégrale de cette fonction entre 0 et 8. 
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                         xmin=0,   xmax=10,
+                         ymin=-1.5,   ymax=1.5,
+                        minor x tick num = 4,
+                        ylabel = $f(x)$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:2,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {1};% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                      \addplot [
+                        domain=2:4,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {-1};
+                       \addplot [black,thick,domain=0:10] {0};
+                        \addplot [
+                        domain=4:6,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {1};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+             \item[false] $1$
+		    \item[true] $2$
+		    \item[false] $-1$
+		    \item[false]  $0$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             On considère une fonction dont la courbe est représentée ci-dessous. Calculer l'air sous cette courbe. 
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                         xmin=-4,   xmax=4,
+                         ymin=0,   ymax=10,
+                        minor x tick num = 4,
+                        ylabel = $f(x)$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=-4:4,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {-2*abs(x)+8 };% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+             \item[true] $32$
+		    \item[false] $16$
+		    \item[false] $64$
+		    \item[false] $8$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+          \begin{question}{27,1213}{Intégration graphique}{3}{1188}
+             Ci-après, on représente l'évolution du nombre de bactéries dans une population donnée en fonction du temps t (en heure). Le nombre de bactéries N(t) est donné par la relation suivante: $ N(t) =10e^{-2*t+3} $. Quel est le nombre total de bactérie entre t=0h et t=1h?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $t$,
+                         xmin=0,   xmax=5,
+                        minor x tick num = 4,
+                        ylabel = $N(t)$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:20,
+                        samples=200,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                       % mark=o,
+                      ]
+                      {10*exp(-2*x+3)};% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[true] 87
+		    \item[false] 25
+		    \item[false] 152
+		    \item[false] 33
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%

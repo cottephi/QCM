@@ -1,0 +1,222 @@
+		\begin{question}{N.A.}{Représentation graphique}{1}{}
+            La représentation d'une fonction périodique diffère-t-elle quand on la représente selon une échelle semi-logarithmique selon l'axe des ordonnées?
+        \end{question}
+        \begin{reponses}
+            \item[false] Non.
+		    \item[false] Oui.
+		    \item[true] La représentation de la période reste la même mais la représentation des ordonnées change.
+		    \item[false] La représentation de la période change mais la représentation des ordonnées reste la même.
+	    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+		\begin{question}{27}{Formalisme mathématique}{1}{}
+            Considérons les points $A(1,3)$ et $B(7,1)$ de la droite ci-après. Quel est le coefficient directeur de cette droite?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                        minor x tick num = 4,
+                        ylabel = $y$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:10,
+                        samples=30,
+                        color=black,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {-1/3*x+10/3};
+                      \addplot [
+                        color=red,
+                        mark=*,
+                      ]
+                      coordinates {(1,3)}
+                      node[pin=10:{$A$}]{};
+                      \addplot [
+                        color=red,
+                        mark=*,
+                      ]
+                      coordinates {(7,1)}
+                      node[pin=10:{$B$}]{};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] $-3$
+		    \item[true] $-1/3$
+		    \item[false] $2/3$
+		    \item[false] $3/2$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27}{Formalisme mathématique}{2}{}
+           Quel est le coefficient directeur de la droite ci-après?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                        minor x tick num = 4,
+                        ylabel = $y$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:10,
+                        samples=30,
+                        color=black,
+                        style = dashed,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {1/3*x+2};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] $-3$
+		    \item[false] $-1/3$
+		    \item[true] $1/3$
+		    \item[false] $2$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27}{Formalisme mathématique}{2}{}
+           Quel est l'ordonnée à l'origine de la droite ci-après?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                        minor x tick num = 4,
+                        ylabel = $y$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:10,
+                        samples=30,
+                        color=black,
+                        style = dashed,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {1/3*x+2};
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] $-3$
+		    \item[false] $0$
+		    \item[false] $1/3$
+		    \item[true] $2$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+		\begin{question}{27}{Beer-Lambert}{1}{}
+            Considérons la fonction $f(x) = A\cdot 10^{-\alpha x}$ avec $A$ et $\alpha$ des constantes positives. La figure ci-après montre la représentation graphique en échelle semi-logarithmique ($\log_{10}$) de la fonction normalisée $f(x)/A$ pour plusieurs valeurs de $x$. Quelle est la valeur du coefficient $\alpha$?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                        minor x tick num = 4,
+                        ylabel = $f(x)/A$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:20,
+                        samples=30,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {-0.5*x*10};% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] $\alpha = \num{0.5}$
+		    \item[true] $\alpha = 5$
+		    \item[false] $\alpha = -5$
+		    \item[false] $\alpha = \num{0.2}$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27}{Beer-Lambert}{1}{}
+            Considérons la fonction $f(x) = A\cdot 10^{-\alpha x}$ avec $A$ et $\alpha$ des constantes positives. La figure ci-après montre la représentation graphique en échelle semi-logarithmique ($\log_{10}$) de la fonction normalisée $f(x)/A$ pour plusieurs valeurs de $x$. Quelle est la valeur du coefficient $A$?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                        minor x tick num = 4,
+                        ylabel = $f(x)/A$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:20,
+                        samples=30,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {x*10};% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] $A = 0$
+		    \item[true] On ne peut pas connaître $A$.
+		    \item[false] $A = \num{-5}$
+		    \item[false] $A = \num{5}$
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%
+        \begin{question}{27}{Beer-Lambert}{1}{}
+            Considérons la fonction $f(x) = A\cdot 10^{-\alpha x}$ avec $A$ et $\alpha$ des constantes positives. La figure ci-après montre la représentation graphique en échelle semi-logarithmique ($\log_{10}$) de la fonction normalisée $f(x)/A$ pour plusieurs valeurs de $x$. Que vaut $A$?
+            \begin{figure}
+              \begin{tikzpicture}
+                  \begin{axis}[
+                        axis lines = left,
+                        xlabel = $x$,
+                        minor x tick num = 4,
+                        ylabel = $f(x)/A$,
+                        /pgf/number format/.cd,%3 lignes dessous, utiliser spacers français au lieu d'anglais.
+                        use comma,
+                        1000 sep={}
+                      ]
+                      %Below the red curve
+                      \addplot [
+                        domain=0:20,
+                        samples=30,
+                        color=red,
+                        %/pgf/text mark = {+}, %changer le marqueur text
+                        %mark=o,
+                      ]
+                      {-0.5*x*10};% pour  y = a . exp(-b . x) , - a.b est la pente de la tangente à la courbe en x = 0. Cette droite coupe l'axe X en x = 1/b. Pour un même a, b indique donc la rapidité de la décroissance de la fonction.
+                  \end{axis}
+              \end{tikzpicture}
+             \end{figure}
+        \end{question}
+        \begin{reponses}
+            \item[false] $A = 1$
+		    \item[false] $A = 4$
+		    \item[false] $A = \num{0.2}$
+		    \item[true] On ne peut pas connaître $A$.
+		    \end{reponses}
+        %%%%%%%%%%%%%%%%%%%%

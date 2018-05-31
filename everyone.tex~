@@ -1,0 +1,6 @@
+\documentclass[11pt]{article}
+
+\input{headers}
+\begin{document}
+\tableofcontents
+

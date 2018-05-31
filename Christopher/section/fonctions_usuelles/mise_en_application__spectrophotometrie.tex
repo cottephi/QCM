@@ -1,0 +1,59 @@
+            \begin{question}{NC}{Beer-Lambert}{1}{/} 
+				La loi de Beer-Lambert est une relation empirique reliant l'atténuation de la lumière aux propriétés du milieu qu'elle traverse et à l'épaisseur traversée. Cette loi est très utilisée pour connaître la concentration d'une solution. Elle s'exprime de la manière suivante : $A=\epsilon C l$ avec $A$ l'absorbance (ou densité optique), $\epsilon$ le coefficient d'absorption molaire en $\si{\liter\per\mole\per\centi\meter}$, $C$ la concentration de la solution en $\si{\mole\per\liter}$ et $l$ la largueur de la cuve mise dans le spectrophotomètre en $\si{\centi\meter}$. Mais au fait, que nous dit la loi de Beer-Lambert concernant la relation entre la concentration C de la solution étudiée, et l'absorbance (ou densité optique) A ? 
+            \end{question}
+            \begin{reponses}
+            	\item[false]  Elle est parabolique
+            	\item[true]   Elle est linéaire
+                \item[false]  Elle est exponentielle
+                \item[false]  Elle est logarithmique
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \begin{question}{NC}{Beer-Lambert}{2}{/} 
+				On dispose d'une solution aqueuse contenant des ions $Cu^{2+}$, de concentration $C_0= \SI{ 5,0e-2}{\mol\per\liter}$. On mesure son spectre grâce à un spectrophotomètre et en plaçant cette solution dans une cuve de largeur $l= \SI{1,0}{\si\centi\meter}$. L'espèce $Cu^{2+}$ est colorée. On mesure la valeur d'absorbance maximale pour la solution étudiée et on trouve $A_{max} = 0.43$. En déduire le coefficient d’absorption molaire de la solution en $Cu^{2+}$,noté $\epsilon_{Cu}$, à la longueur d’onde $\lambda_m$ pour laquelle l’absorbance est maximale.
+            \end{question}
+%
+           \begin{reponses}
+            	\item[true] $\epsilon_{Cu} =  \SI{8.6}{\liter\per\mole\per\centi\meter}$
+            	\item[false] $\epsilon_{Cu} = \SI{0.86}{\liter\per\mole\per\centi\meter}$
+                \item[false] $\epsilon_{Cu} = \SI{7.5}{\liter\per\mole\per\centi\meter}$
+                \item[false] $\epsilon_{Cu} = \SI{0.75}{\liter\per\mole\per\centi\meter}$
+                \item[false] $\epsilon_{Cu} = \SI{0.21}{\liter\per\mole\per\centi\meter}$
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+			\begin{question}{1221}{calcul de limite}{2}{/}
+			\begin{figure}
+                \begin{tikzpicture}
+        		\begin{axis}[
+                    title = ,
+                    xlabel ={temps (h)},
+                    ylabel ={$N_{cellules}$},]
+                    % density of Normal distribution:
+        			\addplot [
+                      red,
+                      domain =0:200,
+                      samples =201,
+             		]
+        			  {200*exp(-0.02*x)+100/(1+2*exp(-0.02*(x-100)))};
+        		\end{axis}
+        		\end{tikzpicture}
+        		\end{figure}
+                La figure ci-dessus représente l'évolution d'une population de cellules en fonction du temps. Voici l'expression du nombre de cellules $N_{cellules}$ en fonction du temps : $N_{cellules}= 200\exp(-0.02t)+\frac{100}{1+2exp(-0.02(t-100))}$. Pour un temps très grand, quel sera le nombre de cellules observées ? 
+            \end{question}     
+				\begin{reponses}
+            	\item[false]  $0 $ 
+            	\item[true]   $100 $ 
+                \item[false]   $+\infty $ 
+                \item[false]  $150 $ 
+                \end{reponses}
+        	\begin{question}{1221}{Fonctions usuelles}{2}{/}
+				Une société produit des bactéries pour l’industrie. En laboratoire, on mesure, dans un milieu nutritif approprié, la masse de ces bactéries, mesurée en grammes. On note $M(t)$ la masse mesurée, en kilogramme, au cours du temps $t$ en jours. L'évolution de la masse mesurée au cours du temps est définie par la fonction suivante : $M(t) = \frac{50}{1+49\exp{-0.2t}}$. Au bout d'un très grand ($t \to +\infty$), vers quoi va tendre la masse mesurée ?
+%enunjour.
+            \end{question}
+            \begin{reponses}
+            	\item[false] $+\infty$
+            	\item[false] $\SI{0}{\kilo\gram}$
+                \item[false] $\SI{1}{\kilo\gram}$
+                \item[true] $\SI{50}{\kilo\gram}$
+            \end{reponses}
+			%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%--------
